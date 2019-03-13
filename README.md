@@ -44,11 +44,13 @@ sensor:
   - platform: mqtt
     name: "Laptop CPU Loading"
     state_topic: "phucLaptop/cpu"
-    value_template: "{{ value_json.pload }}"
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.pLoad }}"
 
   - platform: mqtt
     name: "Laptop CPU Freg"
     state_topic: "phucLaptop/cpu"
+    unit_of_measurement: 'Mhz'
     value_template: "{{ value_json.freg }}"
 
   - platform: mqtt
