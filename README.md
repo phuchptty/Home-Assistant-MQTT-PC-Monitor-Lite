@@ -34,6 +34,49 @@ Vào file config.json trong thư mục cài đặt mặc định và chỉnh s�
 
 ```
 
+## Thiết Lập Config Home Assistant
+Mở file configuration.yaml 
+Thêm đoạn code sau vào phần sensor
+
+```yaml
+sensor:
+
+  - platform: mqtt
+    name: "Laptop CPU Loading"
+    state_topic: "phucLaptop/cpu"
+    value_template: "{{ value_json.pload }}"
+
+  - platform: mqtt
+    name: "Laptop CPU Freg"
+    state_topic: "phucLaptop/cpu"
+    value_template: "{{ value_json.freg }}"
+
+  - platform: mqtt
+    name: "Laptop RAM"
+    state_topic: "phucLaptop/ram"
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.ramPercent }}"
+
+  - platform: mqtt
+    name: "Laptop Disk"
+    state_topic: "phucLaptop/disk"
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.diskPercent }}"
+
+  - platform: mqtt
+    name: "Laptop Battery"
+    state_topic: "phucLaptop/batt"
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.percent }}"
+
+  - platform: mqtt
+    name: "Laptop Battery Status"
+    state_topic: "phucLaptop/batt"
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.status }}"
+
+```
+Save và khởi động lại.
 ## Đóng Góp
 Nếu bạn muốn đóng góp vui lòng lập 1 pull request. 
 
