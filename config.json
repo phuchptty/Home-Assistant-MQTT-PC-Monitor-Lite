@@ -1,0 +1,17 @@
+{
+  "mqtt" : {
+    "broker" : "192.168.1.39",
+    "username" : "mqtt", 
+    "password" : "",
+    "port" : "1883"
+  },
+
+  "customPCName" : "pc",
+
+  "channel" : {
+    "ram" : "/ram",
+    "cpu" : "/cpu",
+    "disk" : "/disk",
+    "battery" : "/batt"
+  }
+}
